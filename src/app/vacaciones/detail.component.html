@@ -1,0 +1,117 @@
+<div id="tirillaContainer" class="ui-g dashboard" *ngIf="data" #tirillaContainer>
+  <div class="ui-g-12" >
+    <div class="card ui-fluid">
+      <div class="ui-g">
+        <div class="ui-g-12">
+          <div class="activity-header">
+            <div class="ui-g">
+              <div class="ui-g-6" id="myCanvas" >
+                <!--<img id="scream" [src]="serviceUrl+data['LOGO']" width="200px" *ngIf="showImage">-->
+              </div>
+              <div class="ui-g-6">
+                <button type="button" label="Descargar" icon="ui-icon-cloud-download" pButton (click)="makePdf()"></button>
+                <p>
+                  <span style="font-weight:bold">NIT</span>: <span>{{ datosBasicos['NIT'] ? datosBasicos['NIT'] : '' }}</span>
+                </p>
+                <p>
+                  <span style="font-weight:bold">PERIODO</span>: <span>{{ datosBasicos['PERIODO'] ? datosBasicos['PERIODO'] : '' }}</span>
+                </p>
+              </div>
+              
+            </div>
+          </div>
+          <hr>
+          <div class="ui-g">
+            <div class="ui-g-6" >
+              <p>
+                <span style="font-weight:bold">NOMBRE</span>: <span>{{ datosBasicos['NOMBRE'] ? datosBasicos['NOMBRE'] : '' }}</span>
+              </p>
+              <p>
+                <span style="font-weight:bold">PERFIL</span>: <span>{{ datosBasicos['CARGO'] ? datosBasicos['CARGO'] : '' }}</span>
+              </p>
+            </div>
+            <div class="ui-g-6">
+              <p>
+                <span style="font-weight:bold">CEDULA DE CIUDADANIA</span>: <span>{{ datosBasicos['CEDULA DE CIUDADANIA'] ? datosBasicos['CEDULA DE CIUDADANIA'] : '' }}</span>
+              </p>
+              <p>
+                <span style="font-weight:bold">CENTRO DE TRABAJO</span>: <span>{{ datosBasicos['CENTRO DE TRABAJO'] ? datosBasicos['CENTRO DE TRABAJO'] : '' }}</span>
+              </p>
+            </div>
+          </div>
+          <hr>
+          <div class="ui-g">
+            <div class="ui-g-6">
+              <p-panel header="INGRESOS" [style]="{'height':'100%'}">
+                <!--<li>
+                      <div class="ui-g">
+                        <div class="ui-g-6">Concepto</div>
+                        <div class="ui-g-2" style="text-align:right">Cantidad</div>
+                        <div class="ui-g-4" style="text-align:right">Valor</div>
+                      </div>
+                    </li>-->
+                <ul class="activity-list">
+                    <ng-template ngFor let-item let-last="last" [ngForOf]="ingresos">
+                    <li>
+                      <div class="ui-g">
+                        <div class="ui-g-6">{{ item['Concepto'] }}</div>
+                        <div class="ui-g-2" style="text-align:right">{{ item['Cantidad'] }}</div>
+                        <div class="ui-g-4" style="text-align:right">$ {{ item['Valor'] | number }}</div>
+                      </div>
+                    </li>
+                  </ng-template>
+                  <li>
+                    <div class="ui-g">
+                      <div class="ui-g-7">TOTAL INGRESOS</div>
+                      <div class="ui-g-5" style="text-align:right">
+                        <div class="count" style="background-color:#daedf6">
+                        $ {{ data['TOTAL INGRESOS'] | number }}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="ui-g">
+                      <div class="ui-g-7">NETO PAGADO</div>
+                      <div class="ui-g-5" style="text-align:right">
+                        <div class="count" style="background-color:#dff0d9">
+                          $ {{ data['TOTAL NETO'] | number }}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </p-panel>
+            </div>
+  
+            <div class="ui-g-6">
+              <p-panel header="DEDUCCIONES" [style]="{'height':'100%'}">
+                <ul class="activity-list">
+                  <ng-template ngFor let-item let-last="last" [ngForOf]="deducciones">
+                    <li>
+                      <div class="ui-g">
+                        <div class="ui-g-6">{{ item['Concepto'] }}</div>
+                        <div class="ui-g-2">{{ item['Cantidad'] }}</div>
+                        <div class="ui-g-4" style="text-align:right">$ {{ item['Valor'] | number }}</div>
+                      </div>
+                    </li>
+                  </ng-template>
+                  <li>
+                    <div class="ui-g">
+                      <div class="ui-g-7">TOTAL DEDUCCIONES</div>
+                      <div class="ui-g-5" style="text-align:right">
+                        <div class="count" style="background-color:#de5453">
+                          $ {{ data['TOTAL DEDUCCIONES'] | number }}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </p-panel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
