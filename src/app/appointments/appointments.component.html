@@ -1,0 +1,63 @@
+<p-panel header="{{ title }}">
+  <form (ngSubmit)="f.valid && onSubmit()" #f="ngForm" novalidate id="formulario" name="formulario">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid">
+      <div class="ui-g form-group">
+        <div class="ui-grid-col-12">
+          <label for="name">* Nombre y Apellido:</label>
+          <input pInputText type="text" id="name" name="name" required
+                 [(ngModel)]="cita.name" #name="ngModel"/>
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="f.submitted && !name.valid">
+            Nombre es requerido
+          </div>
+        </div>
+      </div>
+      <div class="ui-g form-group">
+        <div class="ui-grid-col-6">
+          <label for="name">* Correo:</label>
+          <input pInputText type="text" id="email" name="email" required
+                 [(ngModel)]="cita.email" #email="ngModel"/>
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="f.submitted && !email.valid">
+            Correo es requerido
+          </div>
+        </div>
+        <div class="ui-grid-col-6">
+          <label for="name">* Teléfono:</label>
+          <input pInputText type="text" id="phone" name="phone" required titleCaseText
+                 [(ngModel)]="cita.phone" #phone="ngModel"/>
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="f.submitted && !phone.valid">
+            Teléfono es requerido
+          </div>
+        </div>
+      </div>
+      <div class="ui-g form-group">
+        <div class="ui-grid-col-12">
+          <label for="name">* Descripción:</label>
+          <textarea pInputTextarea id="description" name="description" titleCaseText
+                    autoResize="autoResize" [rows]="3" [cols]="30" class="ui-inputtext"
+                    [(ngModel)]="cita.description" #description="ngModel"></textarea>
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="f.submitted && !description.valid">
+            Descripción es requerido
+          </div>
+        </div>
+      </div>
+      <div class="ui-g form-group">
+        <div class="ui-grid-col-3"></div>
+        <div class="ui-grid-col-3">
+          <button pButton class="red-btn" type="button" label="Cancelar" icon="ui-icon-clear"
+                  (click)="onBack((f.dirty === true))"></button>
+        </div>
+        <div class="ui-grid-col-3">
+          <button pButton type="submit" label="Guardar" icon="ui-icon-save"></button>
+        </div>
+        <div class="ui-grid-col-3"></div>
+      </div>
+    </div>
+  </form>
+</p-panel>
+<p-confirmDialog width="400" #cd>
+  <p-footer>
+    <button type="button" pButton icon="fa-close" label="No" (click)="cd.reject()"></button>
+    <button type="button" pButton icon="fa-check" label="Si" (click)="cd.accept()"></button>
+  </p-footer>
+</p-confirmDialog>
+<p-growl [value]="msgs" sticky="sticky"></p-growl>

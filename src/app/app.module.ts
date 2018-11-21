@@ -6,7 +6,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {SharedModule} from './shared/shared.module';
 
-import {LoginComponent} from './login/login.component';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {AppMenuComponent, AppSubMenuComponent} from './shared/app.menu.component';
@@ -17,16 +16,12 @@ import {AppRightpanelComponent} from './shared/app.rightpanel.component';
 import {AppInlineProfileComponent} from './shared/app.profile.component';
 import {BreadcrumbService} from './shared/breadcrumb.service';
 import {AppMainComponent} from './shared/app-main/app-main.component';
-import { TirillaComponent } from './tirilla/tirilla.component';
-import {DetailComponent} from './tirilla/detail.component';
-import {PrimasComponent} from './primas/listar.component';
-import {CesantiasComponent} from './cesantias/listar.component';
-import {VacacionesComponent} from './vacaciones/listar.component';
-import {CesantiasdetailComponent} from './cesantias/detail.component';
-import {VacacionesdetailComponent} from './vacaciones/detail.component';
-import {PrimasdetailComponent} from './primas/detail.component';
-import {ProfileComponent} from './profile/profile.component';
-import {AuthGuard} from './_services/auth.guard.service';
+
+import { HomeComponent } from './home/home.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { SpecialistsComponent } from './specialists/specialists.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PricesComponent } from './prices/prices.component';
 
 @NgModule({
     imports: [
@@ -38,7 +33,6 @@ import {AuthGuard} from './_services/auth.guard.service';
         SharedModule
     ],
     declarations: [
-        LoginComponent,
         AppComponent,
         AppMainComponent,
         AppMenuComponent,
@@ -48,21 +42,17 @@ import {AuthGuard} from './_services/auth.guard.service';
         AppBreadcrumbComponent,
         AppRightpanelComponent,
         AppInlineProfileComponent,
-        TirillaComponent,
-        DetailComponent,
-        CesantiasComponent,
-        CesantiasdetailComponent,
-        VacacionesComponent,
-        VacacionesdetailComponent,
-        PrimasComponent,
-        PrimasdetailComponent,
-        ProfileComponent
+        HomeComponent,
+        AppointmentsComponent,
+        SpecialistsComponent,
+        DashboardComponent,
+        PricesComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         BreadcrumbService,
-        AuthGuard
     ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }

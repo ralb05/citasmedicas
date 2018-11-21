@@ -20,12 +20,11 @@ export class AppMenuComponent implements OnInit {
 
     ngOnInit() {
         this.model = [
-          {label: 'Mi Información', icon: 'person', routerLink: ['/perfil']},
-          {label: 'Tirillas de pago', icon: 'find_in_page', routerLink: ['/tirillas']},
-          {label: 'Primas', icon: 'attach_money', routerLink: ['/primas']},
-          {label: 'Cesantias', icon: 'airline_seat_flat_angled', routerLink: ['/cesantias']},
-          {label: 'Vacaciones', icon: 'airplanemode_active', routerLink: ['/vacaciones']}
-          /*{label: 'Certificados', icon: 'assignment_turned_in', routerLink: ['/dashboard']}*/
+          {label: 'Inicio', icon: 'dashboard', routerLink: ['/']},
+          {label: 'Solicitar cita médica', icon: 'date_range', routerLink: ['/modulos/citas']},
+          {label: 'Medicos Especialistas', icon: 'shopping_card', routerLink: ['/modulos/especialistas']},
+          {label: 'Cotizar Servicios', icon: 'monetization_on', routerLink: ['/modulos/cotizaciones']},
+          {label: 'Médico en Casa', icon: 'home', routerLink: ['/modulos/medicoencasa']}
         ];
     }
 }

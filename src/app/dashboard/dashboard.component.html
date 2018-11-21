@@ -1,0 +1,74 @@
+<div class="layout-wrapper" [ngClass]="{'layout-compact':layoutCompact}" (click)="onLayoutClick()">
+  
+  <div #layoutContainer class="layout-container">
+  
+    <div class="topbar clearfix">
+      <div class="topbar-right">
+        <h2>Salud Al Alcance De Su Mano</h2>
+      </div>
+    </div>
+    
+    <div class="layout-main">
+      
+      <div class="layout-content">
+        <div class="ui-g dashboard">
+          <div class="ui-g-12">
+            <h1 class="main-center">Médicos a su disposición</h1>
+            <h2 class="main-center">Solicita Médico domiciliario Sin mensualidades</h2>
+          </div>
+          <div class="ui-g-12 ui-md-6 ui-lg-3">
+            <div class="ui-g card colorbox colorbox-1">
+              <div class="ui-g-4">
+                <i class="material-icons">date_range</i>
+              </div>
+              <div class="ui-g-8">
+                <!--<span class="colorbox-name"></span>-->
+                <span class="colorbox-count"><a routerLink="/modulos/citas">Citas Medicas</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="ui-g-12 ui-md-6 ui-lg-3">
+            <div class="ui-g card colorbox colorbox-2">
+              <div class="ui-g-4">
+                <i class="material-icons">shopping_card</i>
+              </div>
+              <div class="ui-g-8">
+                <span class="colorbox-count"><a routerLink="/modulos/especialistas">Medicos Especialistas</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="ui-g-12 ui-md-6 ui-lg-3">
+            <div class="ui-g card colorbox colorbox-3">
+              <div class="ui-g-4">
+                <i class="material-icons">monetization_on</i>
+              </div>
+              <div class="ui-g-8">
+                <span class="colorbox-count"><a routerLink="/modulos/cotizaciones">Cotizar Servicios</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="ui-g-12 ui-md-6 ui-lg-3">
+          <div class="ui-g card colorbox colorbox-4">
+            <div class="ui-g-4">
+              <i class="material-icons">home</i>
+            </div>
+            <div class="ui-g-8">
+              <span class="colorbox-count"><a routerLink="/modulos/medicoencasa">Médico en Casa</a></span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div>
+          <div class="ui-g-12 testimonial-slider">
+              <h1 class="testimonial-center">Nuestro Enfoques</h1>
+              <p>Ser reconocidos por brindar a nuestros usuarios, la mejor experiencia en salud; con un enfoque humanista, con un alto sentido de responsabilidad social, al alcance de todos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="layout-mask"></div>
+  </div>
+
+</div>
+

@@ -1,0 +1,58 @@
+topbar {
+   color: #ffffff;
+}
+
+.layout-container .topbar .topbar-left {
+   width: 350px;
+   color: #ffffff;
+}
+
+.colorbox-count {
+   line-height: 1em;
+}
+.dashboard .colorbox .colorbox-count {
+   font-size: 33px;
+}
+
+body {
+  /* background: #14181E url( ../../assets/app/intro-bg2.jpg) no-repeat center !important;
+   height: 100%;*/
+}
+.topbar-right {
+   float: right;
+   /*font-family: "merriweather-bold", serif;*/
+   font-family: Roboto,"Helvetica Neue",sans-serif;
+   color: #ffffff;
+}
+
+.main-center {
+   font-family: "merriweather-bold", serif;
+   text-align: center;
+   color: #03A9F4;
+}
+h1.main-center  {
+   font-size: 5.4rem;
+}
+.testimonial-slider{
+   padding-top: 200px;
+}
+.testimonial-center {
+   font-family: "merriweather-bold", serif;
+   text-align: center;
+   color: #000;
+}
+
+h1.testimonial-center  {
+   font-size: 4.4rem;
+}
+.testimonial-slider p {
+   font-family: "raleway-medium", sans-serif;
+   font-size: 1.5rem;
+   line-height: 1.8;
+   color: #8d8d8d;
+   padding: 10px 100px;
+}
+
+.dashboard .colorbox .colorbox-count a {
+   color: #ffffff;
+}
